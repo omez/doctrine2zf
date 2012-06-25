@@ -1,0 +1,43 @@
+{
+	"name" : "omez/doctrine2zf", 
+	"description" : "Doctrine2 module for Zend Framework 2. Compilation of rescent modules + migrations stuff", 
+	"type" : "library", 
+	"license" : "MIT", 
+	"keywords" : [
+		"doctrine", 
+		"module", 
+		"zf2", 
+		"orm",
+		"migrations",
+	], 
+	"authors" : [
+		{
+			"name" : "Alexander Sergeychik", 
+			"email" : "alexander.sergeychik@gmail.com", 
+			"homepage" : "http://sergeychik.com"
+		}
+	], 
+	"require" : {
+		"php" : ">=5.3.3", 
+		"doctrine/common" : "2.*", 
+		"doctrine/data-fixtures" : "dev-master", 
+		"symfony/yaml" : "2.0.*", 
+		"symfony/console" : "2.0.*", 
+		"doctrine/orm" : "2.2.*", 
+		"doctrine/migrations" : "*"
+	}, 
+	"autoload" : {
+		"psr-0" : {
+			"DoctrineModule" : "src/", 
+			"DoctrineModuleTest" : "tests/", 
+			"DoctrineORMModule" : "src/", 
+			"DoctrineORMModuleTest" : "tests/"
+		}, 
+		"classmap" : [
+			"./"
+		]
+	}, 
+	"bin" : [
+		"bin/doctrine"
+	]
+}
