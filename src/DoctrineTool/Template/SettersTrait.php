@@ -11,7 +11,7 @@ use DoctrineTool\Template\Utils;
  * @version 0.1
  * @package DoctrineTool\Template
  */
-trait SettersTrait implements SetterInvokableInterface {
+trait SettersTrait {
 	
 	/**
 	 * (non-PHPdoc)
@@ -58,5 +58,17 @@ trait SettersTrait implements SetterInvokableInterface {
 		return method_exists($this, $this->__getPropertySetterName($property));
 	}
 	
+	/**
+	 * Additional setter method to access to properties through overrided setters
+	 *
+	 * @param string $property
+	 * @param mixed $value
+	 * @throws InvalidPropertyNameException
+	 * @throws ViolatedAccessPropertyException
+	 * @return mixed
+	 */
+	public function __set($property, $value) {
+		return $this->__invokePropertySetter($property, $value);
+	}
 	
 }

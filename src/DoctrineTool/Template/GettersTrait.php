@@ -11,7 +11,7 @@ use DoctrineTool\Template\Utils;
  * @version 0.1
  * @package DoctrineTool\Template
  */
-trait GettersTrait implements GetterInvokableInterface {
+trait GettersTrait {
 	
 	/**
 	 * (non-PHPdoc)
@@ -56,5 +56,16 @@ trait GettersTrait implements GetterInvokableInterface {
 		return method_exists($this, $this->__getPropertyGetterName($property));
 	}
 	
+	/**
+	 * Additional getter method to access to properties through overrided getters
+	 * 
+	 * @param string $property
+	 * @throws InvalidPropertyNameException
+	 * @throws ViolatedAccessPropertyException
+	 * @return mixed
+	 */
+	public function __get($property) {
+		return $this->__invokePropertyGetter($property);
+	}
 	
 }

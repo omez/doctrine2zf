@@ -5,7 +5,7 @@ use DoctrineTool\Template\Feature\ImportableInterface;
 use \InvalidArgumentException;
 
 /**
- * Implements importable interface.
+ * Implements importable interface as trait.
  * 
  * @todo implement import conflicts strategies for array2array/scalar2array/array2scalar situations
  * 
@@ -13,7 +13,7 @@ use \InvalidArgumentException;
  * @package DoctrineTool\Template
  * @version 0.1-dev
  */
-trait ImportTrait implements ImportableInterface {
+trait ImportTrait {
 	
 	/**
 	 * (non-PHPdoc)
