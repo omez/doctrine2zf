@@ -16,31 +16,31 @@ return array (
 		),
 		'cache' => array (
 			'apc' => array (
-				'class' => 'Doctrine\\Common\\Cache\\ApcCache' 
+				'class' => 'Doctrine\Common\Cache\ApcCache' 
 			),
 			'array' => array (
-				'class' => 'Doctrine\\Common\\Cache\\ArrayCache' 
+				'class' => 'Doctrine\Common\Cache\ArrayCache' 
 			),
 			'memcache' => array (
-				'class' => 'Doctrine\\Common\\Cache\\Memcache',
+				'class' => 'Doctrine\Common\Cache\Memcache',
 				'instance' => 'my_memcache_alias' 
 			),
 			'memcached' => array (
-				'class' => 'Doctrine\\Common\\Cache\\Memcached',
+				'class' => 'Doctrine\Common\Cache\Memcached',
 				'instance' => 'my_memcached_alias' 
 			),
 			'redis' => array (
-				'class' => 'Doctrine\\Common\\Cache\\RedisCache',
+				'class' => 'Doctrine\Common\Cache\RedisCache',
 				'instance' => 'my_redis_alias' 
 			),
 			'wincache' => array (
-				'class' => 'Doctrine\\Common\\Cache\\Wincache' 
+				'class' => 'Doctrine\Common\Cache\Wincache' 
 			),
 			'xcache' => array (
-				'class' => 'Doctrine\\Common\\Cache\\XcacheCache' 
+				'class' => 'Doctrine\Common\Cache\XcacheCache' 
 			),
 			'zenddata' => array (
-				'class' => 'Doctrine\\Common\\Cache\\ZendDataCache' 
+				'class' => 'Doctrine\Common\Cache\ZendDataCache' 
 			) 
 		),
 		'orm_autoload_annotations' => true,
@@ -52,12 +52,12 @@ return array (
 				'driver' => 'orm_default',
 				'generate_proxies' => true,
 				'proxy_dir' => 'data/proxies',
-				'proxy_namespace' => 'DoctrineORMModule\\Proxy' 
+				'proxy_namespace' => 'DoctrineORMModule\Proxy' 
 			) 
 		),
 		'driver' => array (
 			'orm_default' => array (
-				'class' => 'Doctrine\\ORM\\Mapping\\Driver\\DriverChain',
+				'class' => 'Doctrine\ORM\Mapping\Driver\DriverChain',
 				'drivers' => array () 
 			) 
 		),
@@ -65,7 +65,7 @@ return array (
 			'orm_default' => array (
 				'connection' => 'orm_default',
 				'configuration' => 'orm_default' 
-			) 
+			)
 		),
 		'eventmanager' => array (
 			'orm_default' => array () 

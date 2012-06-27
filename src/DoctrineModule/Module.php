@@ -42,7 +42,7 @@ class Module implements ServiceProviderInterface
     {
         return include __DIR__ . '/../../config/module.config.php';
     }
-
+	
     /**
      * Expected to return \Zend\ServiceManager\Configuration object or array to
      * seed such an object.
