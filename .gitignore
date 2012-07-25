@@ -1,4 +1,6 @@
 .*
+composer.lock
+composer.phar
 !.git
 !.gitignore
 !.gitmodules
