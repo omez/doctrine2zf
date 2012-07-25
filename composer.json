@@ -1,8 +1,9 @@
 {
 	"name" : "omez/doctrine2zf",
-	"version": "0.1.3",
-	"description" : "Doctrine2 module for Zend Framework 2. Compilation of rescent modules + migrations stuff", 
 	"type" : "library", 
+	
+	"description" : "Doctrine2 module for Zend Framework 2. Compilation of rescent modules + migrations stuff", 
+	
 	"license" : "MIT", 
 	"minimum-stability": "dev",
 	"keywords" : [
@@ -21,7 +22,7 @@
 		}
 	], 
 	"require" : {
-		"php" : ">=5.3.3", 
+		"php" : ">=5.3", 
 		"doctrine/common" : "2.*", 
 		"doctrine/dbal" : "2.*",
 		"doctrine/orm" : "2.*", 
