@@ -24,8 +24,8 @@
 		"doctrine/dbal" : "2.*",
 		"doctrine/orm" : "2.*", 
 		
-		"doctrine/migrations@dev": "dev-master",
-		"doctrine/data-fixtures@dev": "dev-master",
+		"doctrine/migrations": "@dev",
+		"doctrine/data-fixtures": "@dev",
 		
 		"symfony/yaml" : "2.*", 
 		"symfony/console" : "2.*"
