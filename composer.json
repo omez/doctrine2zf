@@ -1,6 +1,6 @@
 {
 	"name" : "omez/doctrine2zf",
-	"version": "0.1.0-beta1",
+	"version": "0.1.1-beta1",
 	"description" : "Doctrine2 module for Zend Framework 2. Compilation of rescent modules + migrations stuff", 
 	"type" : "library", 
 	"license" : "MIT", 
@@ -24,6 +24,8 @@
 		"doctrine/common" : "2.*", 
 		"doctrine/dbal" : "2.*",
 		"doctrine/orm" : "2.*", 
+		
+		"doctrine/migrations": "dev-master",
 		
 		"symfony/yaml" : "2.0.*", 
 		"symfony/console" : "2.0.*"
