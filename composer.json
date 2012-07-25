@@ -24,7 +24,7 @@
 		"doctrine/common" : "2.*", 
 		"doctrine/dbal" : "2.*",
 		"doctrine/orm" : "2.2.*", 
-		"doctrine/migrations" : "*", 
+		"doctrine/migrations" : "dev-master", 
 		"doctrine/data-fixtures": "dev-master", 
 		"symfony/yaml" : "2.0.*", 
 		"symfony/console" : "2.0.*"
