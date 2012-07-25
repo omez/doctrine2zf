@@ -1,5 +1,6 @@
 {
-	"name" : "omez/Doctrine2zf", 
+	"name" : "omez/Doctrine2zf",
+	"version": "1.0beta1"
 	"description" : "Doctrine2 module for Zend Framework 2. Compilation of rescent modules + migrations stuff", 
 	"type" : "library", 
 	"license" : "MIT", 
