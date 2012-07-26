@@ -1,45 +1,43 @@
 {
-	"name" : "omez/doctrine2zf",
-	"type" : "library", 
-	"description" : "Doctrine2 module for Zend Framework 2. Compilation of rescent modules + migrations stuff", 
-	"license" : "MIT", 
-	"keywords" : [
-		"doctrine", 
-		"module", 
-		"zf2", 
+	"name": "omez/doctrine2zf",
+	"type": "library",
+	"version": "v0.1.2-dev",
+	"description": "Doctrine2 module for Zend Framework 2. Compilation of rescent modules + migrations stuff",
+	"license": "MIT",
+	"keywords": [
+		"doctrine",
+		"module",
+		"zf2",
 		"orm",
 		"migrations",
 		"data-fixtures"
-	], 
-	"authors" : [
+	],
+	"authors": [
 		{
-			"name" : "Alexander Sergeychik", 
-			"email" : "alexander.sergeychik@gmail.com", 
-			"homepage" : "http://sergeychik.com"
+			"name": "Alexander Sergeychik",
+			"email": "alexander.sergeychik@gmail.com",
+			"homepage": "http://sergeychik.com"
 		}
-	], 
-	"require" : {
-		"php" : ">=5.3", 
-		"doctrine/common" : "2.*", 
-		"doctrine/dbal" : "2.*",
-		"doctrine/orm" : "2.*", 
-		
+	],
+	"require": {
+		"php": ">=5.3",
+		"doctrine/common": "2.*",
+		"doctrine/dbal": "2.*",
+		"doctrine/orm": "2.*",
 		"doctrine/migrations": "dev-master",
 		"doctrine/data-fixtures": "dev-master",
-		
-		"symfony/yaml" : "2.*", 
-		"symfony/console" : "2.*"
-	}, 
-	"autoload" : {
-		"psr-0" : {
-			"DoctrineModule" : "src/", 
-			"DoctrineModuleTest" : "tests/", 
-			"DoctrineORMModule" : "src/", 
-			"DoctrineORMModuleTest" : "tests/"
+		"symfony/yaml": "2.*",
+		"symfony/console": "2.*"
+	},
+	"autoload": {
+		"psr-0": {
+			"DoctrineModule": "src/",
+			"DoctrineModuleTest": "tests/",
+			"DoctrineORMModule": "src/",
+			"DoctrineORMModuleTest": "tests/"
 		}
-	}, 
-	"bin" : [
+	},
+	"bin": [
 		"bin/doctrine"
 	]
-	
 }
