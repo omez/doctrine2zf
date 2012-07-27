@@ -44,7 +44,7 @@
 		"symfony/yaml": "2.*",
 		"symfony/console": "2.*",
 		
-		"zendframework/zendframework": ">2.0.0-RC1"
+		"zendframework/zendframework": ">=2.0.0-RC1"
 	}
 	
 }
