@@ -1,0 +1,55 @@
+{
+    "name": "omez/doctrine2zf",
+    "type": "library",
+    "version": "0.1.16",
+    "description": "Doctrine2 module for Zend Framework 2. Compilation of rescent modules + migrations stuff",
+    "license": "MIT",
+    "keywords": [
+        "doctrine",
+        "module",
+        "zf2",
+        "orm",
+        "migrations",
+        "data-fixtures"
+    ],
+    "authors": [
+        {
+            "name": "Alexander Sergeychik",
+            "email": "alexander.sergeychik@gmail.com",
+            "homepage": "http://sergeychik.com"
+        }
+    ],
+    "target-dir": "modules/Doctrine2zf",
+    "replace": {
+        "doctrine/doctrine-orm-module": "*",
+        "doctrine/doctrine-module": "*"
+    },
+    "conflict": {
+        "doctrine/doctrine-orm-module": "*",
+        "doctrine/doctrine-module": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "DoctrineModule": "submodules/DoctrineModule/src/",
+            "DoctrineModuleTest": "submodules/DoctrineModule/tests/",
+            "DoctrineORMModule": "submodules/DoctrineORMModule/src/",
+            "DoctrineORMModuleTest": "submodules/DoctrineORMModule/tests/",
+            "DoctrineTool": "src/",
+            "DoctrineToolTest": "tests/"
+        }
+    },
+    "bin": [
+        "bin/doctrine"
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "doctrine/migrations": "dev-master",
+        "zendframework/zendframework": "dev-master",
+        "doctrine/common": ">2.2,<2.4-dev",
+        "doctrine/data-fixtures": "dev-master",
+        "symfony/yaml": ">=2.0.13",
+        "symfony/console": ">=2.0.13",
+        "doctrine/orm": ">2.2,<2.4-dev",
+        "doctrine/dbal": ">2.2,<2.4-dev"
+    }
+}
