@@ -1,6 +1,7 @@
 .*
 composer.lock
 composer.phar
+vendor
 !.git
 !.gitignore
 !.gitmodules
