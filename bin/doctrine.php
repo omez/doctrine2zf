@@ -22,14 +22,14 @@ if (!isset($serviceManager)) {
 /* @var $cli \Symfony\Component\Console\Application */
 $cli = $serviceManager->get('doctrine.cli');
 
-
 // registering migrations.xml to all migrations:* commands
-var_dump($cli->all('migrations'));
+$commands = $cli->all('migrations');
 
-/*$input = new ArgvInput();
-if (!$input->getOption('configuration')) {
-	$input->setOption('configuration', 'config/migrations.xml');
-}*/
+// Set default migrations configuration option to migrations.xml location 
+foreach ($commands as $command) {
+	$option = $command->getDefinition()->getOption('configuration');
+	$option->setDefault('config/migrations.xml');
+}
 
 $cli->run($input);
 
