@@ -14,8 +14,8 @@ use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 class Module implements InitProviderInterface, ConfigProviderInterface, AutoloaderProviderInterface {
 	
 	protected $_submodules = array(
-		'DoctrineModule' => 'build/submodules/DoctrineModule',
-		'DoctrineORMModule' => 'build/submodules/DoctrineORMModule',
+		'DoctrineModule' => 'submodules/DoctrineModule',
+		'DoctrineORMModule' => 'submodules/DoctrineORMModule',
 	);
 	
 	/**
@@ -24,8 +24,8 @@ class Module implements InitProviderInterface, ConfigProviderInterface, Autoload
 	public function init(ModuleManagerInterface $manager) {
 		
 		// Registering submodules
-		foreach ((array)$this->_submodules as $submodule) {
-			$this->_registerSubmodule($submodule);
+		foreach ((array)$this->_submodules as $submodule=>$path) {
+			$this->_registerSubmodule($manager, $submodule, __DIR__ . DIRECTORY_SEPARATOR . $path);
 		}
 		
 	}
@@ -51,8 +51,14 @@ class Module implements InitProviderInterface, ConfigProviderInterface, Autoload
 		);
 	}
 	
-	
-	protected function _registerSubmodule($submodule) {
+	/**
+	 * Registers submodule in system
+	 * 
+	 * @param ModuleManagerInterface $manager
+	 * @param string $submodule
+	 * @param string $absolutepath
+	 */
+	protected function _registerSubmodule(ModuleManagerInterface $manager, $submodule, $absolutepath) {
 		// TODO registration process
 	}
 	

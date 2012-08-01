@@ -1,7 +1,7 @@
 {
     "name": "omez/doctrine2zf",
     "type": "library",
-    "version": "1.0.3",
+    "version": "1.0.6",
     "description": "Doctrine2 module for Zend Framework 2. Compilation of rescent modules + migrations stuff",
     "license": "MIT",
     "keywords": [
@@ -37,10 +37,6 @@
             "DoctrineToolTest": "tests/"
         }
     },
-    "dist": {
-        "type": "zip",
-        "url": "https://github.com/omez/doctrine2zf/zipball/master"
-    },
     "bin": [
         "bin/doctrine"
     ],
@@ -54,5 +50,9 @@
         "symfony/console": ">=2.0.13",
         "doctrine/orm": ">2.2,<2.4-dev",
         "doctrine/dbal": ">2.2,<2.4-dev"
+    },
+    "dist": {
+        "type": "zip",
+        "url": "http://github.com/omez/doctrine2zf/zipball/1.0.6"
     }
 }
