@@ -1,6 +1,8 @@
 <?php
 namespace Doctrine2zf;
 
+use Zend\ModuleManager\ModuleEvent;
+
 use Zend\ModuleManager\ModuleManagerInterface;
 use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
@@ -30,9 +32,18 @@ class Module implements InitProviderInterface, ConfigProviderInterface, Autoload
 	 */
 	public function init(ModuleManagerInterface $manager) {
 		
-		foreach ((array)$this->_submodules as $submodule=>$data) {
-			$manager->loadModule($submodule);
+		$modules = $manager->getModules();
+		
+		if (!is_array($modules) && !$modules instanceof \ArrayAccess) {
+			throw new \RuntimeException('Registering modules currently supports only arrays or \ArrayAccess instances');
 		}
+		
+		foreach ((array)$this->_submodules as $submodule=>$data) {
+			$modules[] = $submodule;
+		}
+		
+		$modules[] = $submodule;
+		$manager->setModules($modules);
 		
 	}
 	
