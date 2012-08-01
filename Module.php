@@ -42,7 +42,6 @@ class Module implements InitProviderInterface, ConfigProviderInterface, Autoload
 			$modules[] = $submodule;
 		}
 		
-		$modules[] = $submodule;
 		$manager->setModules($modules);
 		
 	}
