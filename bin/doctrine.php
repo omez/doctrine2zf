@@ -31,5 +31,5 @@ foreach ($commands as $command) {
 	$option->setDefault('config/migrations.xml');
 }
 
-$cli->run($input);
+$cli->run();
 
