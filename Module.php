@@ -5,6 +5,7 @@ use Zend\ModuleManager\ModuleManagerInterface;
 use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Zend\Loader\ClassMapAutoloader;
 
 /**
  * Doctrine2zf module
@@ -14,20 +15,32 @@ use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 class Module implements InitProviderInterface, ConfigProviderInterface, AutoloaderProviderInterface {
 	
 	protected $_submodules = array(
-		'DoctrineModule' => 'submodules/DoctrineModule',
-		'DoctrineORMModule' => 'submodules/DoctrineORMModule',
+		'DoctrineModule' => array(
+			'classname' => 'DoctrineModule\\Module',
+			'path' => 'submodules/DoctrineModule/Module.php',
+		),
+		'DoctrineORMModule' => array(
+			'classname' => 'DoctrineORMModule\\Module',
+			'path' => 'submodules/DoctrineORMModule/Module.php',
+		),
 	);
 	
 	/**
 	 * {@inheritDoc}
 	 */
-	public function init(ModuleManagerInterface $manager) {
+	public function init(ModuleManager $manager) {
 		
-		// Registering submodules
-		foreach ((array)$this->_submodules as $submodule=>$path) {
-			$this->_registerSubmodule($manager, $submodule, __DIR__ . DIRECTORY_SEPARATOR . $path);
+		$modules = $manager->getModules();
+		if (!is_array($modules) || !$modules instanceof \ArrayAccess) {
+			throw new \RuntimeException('Registering modules currently supports only arrays or \ArrayAccess instances');
 		}
 		
+		foreach ((array)$this->_submodules as $submodule=>$data) {
+			$modules[] = $submodule;
+		}
+		
+		$modules[] = $name;
+		$manager->setModules($modules);
 	}
 	
 	/**
@@ -42,24 +55,23 @@ class Module implements InitProviderInterface, ConfigProviderInterface, Autoload
 	 * {@inheritDoc}
 	 */
 	public function getAutoloaderConfig() {
+		
+		// Registering submodules
+		$map = array();
+		foreach ((array)$this->_submodules as $submodule=>$data) {
+			$map[$data['classname']] = __DIR__. DIRECTORY_SEPARATOR . $data['path'];
+		}
+		
 		return array(
 			'Zend\Loader\StandardAutoloader' => array(
 				'namespaces' => array(
 					'DoctrineTool' => __DIR__ . '/src/DoctrineTool',
 				),
 			),
+			'Zend\Loader\ClassMapAutoloader' => array(
+				'map'=> $map,
+			),
 		);
-	}
-	
-	/**
-	 * Registers submodule in system
-	 * 
-	 * @param ModuleManagerInterface $manager
-	 * @param string $submodule
-	 * @param string $absolutepath
-	 */
-	protected function _registerSubmodule(ModuleManagerInterface $manager, $submodule, $absolutepath) {
-		// TODO registration process
 	}
 	
 }
