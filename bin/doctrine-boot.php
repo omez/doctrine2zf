@@ -28,8 +28,7 @@ $basePath = lookForBasePath('boot/boot.php');
 if ($basePath !== false) {
 	chdir($basePath);
 	$serviceManager = require 'boot/boot.php';
-	
-	if ($serviceManager instanceof ServiceManager) {
+	if (!$serviceManager instanceof ServiceManager) {
 		throw new \RuntimeException('Service manager not set');
 	}
 	$serviceManager->get('Application')->bootstrap();
