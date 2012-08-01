@@ -1,7 +1,7 @@
 {
     "name": "omez/doctrine2zf",
     "type": "library",
-    "version": "0.1.27",
+    "version": "0.1.28",
     "description": "Doctrine2 module for Zend Framework 2. Compilation of rescent modules + migrations stuff",
     "license": "MIT",
     "keywords": [
@@ -10,7 +10,14 @@
         "zf2",
         "orm",
         "migrations",
-        "data-fixtures"
+        "data-fixtures",
+        "doctrine",
+        "module",
+        "zf2",
+        "doctrine",
+        "orm",
+        "module",
+        "zf2"
     ],
     "authors": [
         {
@@ -19,7 +26,6 @@
             "homepage": "http://sergeychik.com"
         }
     ],
-    "target-dir": "modules/Doctrine2zf",
     "replace": {
         "doctrine/doctrine-orm-module": "*",
         "doctrine/doctrine-module": "*"
@@ -37,6 +43,10 @@
             "DoctrineTool": "src/",
             "DoctrineToolTest": "tests/"
         }
+    },
+    "dist": {
+        "type": "zip",
+        "url": "https://github.com/omez/doctrine2zf/zipball/master"
     },
     "bin": [
         "bin/doctrine"
