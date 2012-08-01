@@ -1,7 +1,7 @@
 {
     "name": "omez/doctrine2zf",
     "type": "library",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Doctrine2 module for Zend Framework 2. Compilation of rescent modules + migrations stuff",
     "license": "MIT",
     "keywords": [
