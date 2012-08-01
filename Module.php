@@ -28,7 +28,7 @@ class Module implements InitProviderInterface, ConfigProviderInterface, Autoload
 	/**
 	 * {@inheritDoc}
 	 */
-	public function init(ModuleManager $manager) {
+	public function init(ModuleManagerInterface $manager) {
 		
 		$modules = $manager->getModules();
 		if (!is_array($modules) || !$modules instanceof \ArrayAccess) {
