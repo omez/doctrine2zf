@@ -30,17 +30,10 @@ class Module implements InitProviderInterface, ConfigProviderInterface, Autoload
 	 */
 	public function init(ModuleManagerInterface $manager) {
 		
-		$modules = $manager->getModules();
-		if (!is_array($modules) || !$modules instanceof \ArrayAccess) {
-			throw new \RuntimeException('Registering modules currently supports only arrays or \ArrayAccess instances');
-		}
-		
 		foreach ((array)$this->_submodules as $submodule=>$data) {
-			$modules[] = $submodule;
+			$manager->loadModule($submodule);
 		}
 		
-		$modules[] = $name;
-		$manager->setModules($modules);
 	}
 	
 	/**

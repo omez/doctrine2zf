@@ -1,7 +1,7 @@
 {
     "name": "omez/doctrine2zf",
     "type": "library",
-    "version": "1.0.14",
+    "version": "1.0.15",
     "description": "Doctrine2 module for Zend Framework 2. Compilation of rescent modules + migrations stuff",
     "license": "MIT",
     "keywords": [
@@ -53,6 +53,6 @@
     },
     "dist": {
         "type": "zip",
-        "url": "http://github.com/omez/doctrine2zf/zipball/1.0.14"
+        "url": "http://github.com/omez/doctrine2zf/zipball/1.0.15"
     }
 }
