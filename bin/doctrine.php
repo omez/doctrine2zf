@@ -1,5 +1,7 @@
 <?php
+
 use Zend\ServiceManager\ServiceManager;
+use Symfony\Component\Console\Input\ArgvInput;
 
 ini_set('display_errors', true);
 
@@ -16,4 +18,18 @@ if (!isset($serviceManager)) {
 	throw new RuntimeException('Service manager registered but not instance of ServiceManager');
 }
 
-$serviceManager->get('doctrine.cli')->run();
+
+/* @var $cli \Symfony\Component\Console\Application */
+$cli = $serviceManager->get('doctrine.cli');
+
+
+// registering migrations.xml to all migrations:* commands
+var_dump($cli->all('migrations'));
+
+/*$input = new ArgvInput();
+if (!$input->getOption('configuration')) {
+	$input->setOption('configuration', 'config/migrations.xml');
+}*/
+
+$cli->run($input);
+
